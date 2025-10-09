@@ -1,0 +1,207 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0f0c14;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #181b22;
+    padding: 1rem 5%;
+    border-bottom: 2px solid #00ff88;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar h2 span {
+    font-weight: bold;
+    color: #00ff88;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #00ff88;
+}
+
+/* Área do Usuário */
+.user-area {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.user-area .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00ff88;
+}
+
+.user-area .subtitle {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-top: 1rem;
+}
+
+.user-area img {
+    max-width: 180px;
+    margin-top: 2rem;
+}
+
+/* Seção de Garantias */
+.guarantee {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.guarantee .item {
+    display: flex;
+    align-items: center;
+    background: #181b22;
+    padding: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #00ff88;
+    width: 100%;
+    max-width: 320px;
+}
+
+.guarantee .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+}
+
+.guarantee .icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #00ff88;
+}
+
+.guarantee .info p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Sobre */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 4rem 5%;
+    flex-wrap: wrap;
+    background: #181b22;
+}
+
+.about img {
+    max-width: 220px;
+}
+
+.about .info {
+    max-width: 500px;
+    text-align: center;
+}
+
+.about .info h3 {
+    font-size: 2rem;
+    color: #00ff88;
+    margin-bottom: 1rem;
+}
+
+/* Rodapé */
+footer {
+    background: #0f0c14;
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 2px solid #00ff88;
+}
+
+footer .cols {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+footer .news-col form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+footer input {
+    padding: 0.8rem;
+    border: 1px solid #00ff88;
+    background: #181b22;
+    color: white;
+    border-radius: 5px;
+}
+
+footer button {
+    background: #00ff88;
+    color: #0f0c14;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+footer button:hover {
+    background: #00e67a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .navbar ul {
+        margin-top: 1rem;
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+
+    .guarantee .item {
+        width: 100%;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+}

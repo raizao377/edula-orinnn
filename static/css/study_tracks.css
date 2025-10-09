@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #0f0f23;
+    --second-bg-color: #1a1a2e;
+    --text-color: #fff;
+    --main-color: #00ff88;
+    --hover-color: #00cc7a;
+    --input-bg: #16213e;
+    --input-border: #0e3460;
+    --button-bg: #00ff88;
+    --button-hover: #00cc7a;
+    --card-bg: #16213e;
+    --border-color: #0e3460;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--second-bg-color) 100%);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar h2 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--main-color);
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.page-header p {
+    font-size: 1.8rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Study Tracks Grid */
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.track-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 3rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--main-color), var(--hover-color));
+}
+
+.track-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+}
+
+.track-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.track-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--main-color), var(--hover-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--bg-color);
+}
+
+.track-info h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.track-info p {
+    color: #888;
+    font-size: 1.4rem;
+}
+
+.track-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.track-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.progress-percentage {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--input-bg);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-color), var(--hover-color));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.track-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--main-color);
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.track-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1.2rem 2rem;
+    border-radius: 25px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--main-color), var(--hover-color));
+    color: var(--bg-color);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+    transform: translateY(-2px);
+}
+
+/* Activities List */
+.activities-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.activities-header {
+    padding: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.activities-header h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.activities-header p {
+    color: #ccc;
+    font-size: 1.6rem;
+}
+
+.activities-list {
+    padding: 0;
+}
+
+.activity-item {
+    padding: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.activity-item:hover {
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-status {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.status-completed {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-current {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+.status-locked {
+    background: #444;
+    color: #888;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.activity-content p {
+    color: #888;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.activity-meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.activity-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-small {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+    border-radius: 20px;
+}
+
+/* Activity Detail Page */
+.activity-detail {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 4rem;
+    border: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+}
+
+.activity-detail h1 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.activity-content-detail {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+}
+
+.activity-content-detail h2 {
+    color: var(--main-color);
+    margin: 2rem 0 1rem 0;
+    font-size: 2.2rem;
+}
+
+.activity-content-detail h3 {
+    color: var(--text-color);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.8rem;
+}
+
+.activity-content-detail ul,
+.activity-content-detail ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.activity-content-detail li {
+    margin: 0.5rem 0;
+}
+
+.completion-section {
+    background: rgba(0, 255, 136, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    text-align: center;
+}
+
+.completion-section h3 {
+    color: var(--main-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.completion-section p {
+    color: #ccc;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+/* Flash Messages */
+.flash-message {
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 1200px;
+    font-weight: 500;
+}
+
+.flash-success {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.flash-danger {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .navbar ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .tracks-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .track-card {
+        padding: 2rem;
+    }
+
+    .track-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .track-actions {
+        flex-direction: column;
+    }
+
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .activity-actions {
+        align-self: flex-end;
+    }
+
+    .activity-detail {
+        padding: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header,
+    .track-card,
+    .activity-detail {
+        padding: 1.5rem;
+    }
+
+    .track-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .activity-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
