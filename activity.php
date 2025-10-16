@@ -103,7 +103,7 @@ try {
             break;
         }
     }
-    
+     
     if (!$can_access && $activity['status'] !== 'completed') {
         setFlashMessage('Você precisa completar a atividade anterior primeiro.', 'warning');
         header("Location: track_activities.php?track_id=" . $activity['track_id']);
