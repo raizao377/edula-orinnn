@@ -116,8 +116,6 @@ try {
 $is_completed = $activity['status'] === 'completed';
 ?>
 
-/// Raigay
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
