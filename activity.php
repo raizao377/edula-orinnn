@@ -1,8 +1,8 @@
-<?php
+<?php                 
 require_once 'includes/session.php';
 require_once 'config/database.php';
 
-// Conectar ao banco de dados
+// Conectar ao banco de dados raifeio
 $database = new Database();
 $pdo = $database->getConnection();
 
